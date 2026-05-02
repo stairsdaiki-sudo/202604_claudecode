@@ -1,246 +1,197 @@
-<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="やわらかな日差しの中、片手で頬杖をついて穏やかにくつろぐ女性のイラスト">
+<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="やわらかな朝の光が差し込む、温かなコーヒーと観葉植物のあるくつろぎのシーン">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFF6E6"/>
-      <stop offset="55%" stop-color="#F1DEBE"/>
-      <stop offset="100%" stop-color="#D6B98B"/>
+    <linearGradient id="bgWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#FBF1DF"/>
+      <stop offset="55%" stop-color="#F1DDB9"/>
+      <stop offset="100%" stop-color="#D9BB8A"/>
     </linearGradient>
-    <radialGradient id="warmLight" cx="0.72" cy="0.22" r="0.65">
-      <stop offset="0%" stop-color="#FFFBF2" stop-opacity="0.95"/>
-      <stop offset="55%" stop-color="#FFF1DA" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#FFFBF2" stop-opacity="0"/>
+    <radialGradient id="sun" cx="0.7" cy="0.22" r="0.55">
+      <stop offset="0%"  stop-color="#FFFCF2" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#FFF1D9" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFCF2" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="bloom" cx="0.5" cy="0.45" r="0.7">
-      <stop offset="0%" stop-color="#FFFBF2" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#FFFBF2" stop-opacity="0"/>
+    <radialGradient id="bloom" cx="0.5" cy="0.55" r="0.7">
+      <stop offset="0%"   stop-color="#FFFCF2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFCF2" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3D2A1E"/>
-      <stop offset="100%" stop-color="#5A3D2A"/>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#E5C9A0"/>
+      <stop offset="100%" stop-color="#BE9968"/>
     </linearGradient>
-    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F6DAB8"/>
-      <stop offset="100%" stop-color="#E7BD92"/>
-    </linearGradient>
-    <linearGradient id="sweaterGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FBEFD7"/>
-      <stop offset="100%" stop-color="#E0C8A0"/>
-    </linearGradient>
-    <linearGradient id="leafGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#A6B387"/>
-      <stop offset="100%" stop-color="#7E9162"/>
-    </linearGradient>
-    <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#EBD2AB"/>
-      <stop offset="100%" stop-color="#C7A77B"/>
-    </linearGradient>
-    <linearGradient id="mugGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
+    <linearGradient id="mug" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#FFFFFF"/>
       <stop offset="100%" stop-color="#EFE3D0"/>
     </linearGradient>
-    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="0.6"/>
-    </filter>
-    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#A8B687"/>
+      <stop offset="100%" stop-color="#788C5E"/>
+    </linearGradient>
+    <linearGradient id="leafSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#C5CFA9"/>
+      <stop offset="100%" stop-color="#A2B181"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#F8DEC9"/>
+      <stop offset="100%" stop-color="#EDBE9C"/>
+    </linearGradient>
+    <linearGradient id="book" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#D9BD92"/>
+      <stop offset="100%" stop-color="#B8966B"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="6"/>
     </filter>
   </defs>
 
-  <!-- Background wall -->
-  <rect width="800" height="1000" fill="url(#bgGrad)"/>
-  <rect width="800" height="1000" fill="url(#warmLight)"/>
+  <!-- Background wall with warm light -->
+  <rect width="800" height="1000" fill="url(#bgWall)"/>
+  <rect width="800" height="1000" fill="url(#sun)"/>
   <rect width="800" height="1000" fill="url(#bloom)"/>
 
-  <!-- Soft window light streak -->
-  <g opacity="0.5" filter="url(#blur)">
-    <ellipse cx="600" cy="180" rx="200" ry="120" fill="#FFFBF0"/>
+  <!-- Soft light streaks (window) -->
+  <g opacity="0.55" filter="url(#soft)">
+    <ellipse cx="600" cy="160" rx="220" ry="120" fill="#FFFBEC"/>
+    <ellipse cx="650" cy="220" rx="120" ry="80" fill="#FFFBEC"/>
   </g>
 
-  <!-- Distant picture frame on wall -->
+  <!-- Distant out-of-focus plant on wall (bokeh) -->
+  <g opacity="0.5" filter="url(#soft)">
+    <ellipse cx="120" cy="380" rx="90" ry="180" fill="#A2B181"/>
+    <ellipse cx="180" cy="280" rx="60" ry="120" fill="#B6C396"/>
+  </g>
+  <g opacity="0.4" filter="url(#soft)">
+    <ellipse cx="710" cy="430" rx="90" ry="60" fill="#E2C9A1"/>
+  </g>
+
+  <!-- Bokeh dots -->
+  <g fill="#FFFBEC" opacity="0.55">
+    <circle cx="240" cy="190" r="14"/>
+    <circle cx="320" cy="120" r="8"/>
+    <circle cx="690" cy="380" r="10"/>
+    <circle cx="560" cy="80"  r="6"/>
+    <circle cx="430" cy="160" r="5"/>
+  </g>
+
+  <!-- Subtle picture frame on wall -->
   <g opacity="0.55">
-    <rect x="535" y="220" width="95" height="130" fill="#FFFFFF" rx="3"/>
-    <rect x="548" y="233" width="69" height="104" fill="#E2C9A1" rx="2"/>
-    <path d="M 555 320 L 580 280 L 600 305 L 615 290 L 615 332 L 555 332 Z" fill="#B79770" opacity="0.7"/>
+    <rect x="425" y="220" width="105" height="140" fill="#FFFFFF" rx="3"/>
+    <rect x="438" y="233" width="79" height="114" fill="#E2C9A1" rx="2"/>
+    <path d="M 445 320 L 470 280 L 492 305 L 510 287 L 510 343 L 445 343 Z" fill="#B79770" opacity="0.7"/>
   </g>
 
-  <!-- Background plants (left, soft, behind) -->
-  <g opacity="0.6" filter="url(#blur)">
-    <ellipse cx="55" cy="380" rx="36" ry="105" fill="url(#leafGrad)" transform="rotate(-18 55 380)"/>
-    <ellipse cx="100" cy="300" rx="28" ry="80" fill="url(#leafGrad)" transform="rotate(-30 100 300)"/>
-    <ellipse cx="135" cy="380" rx="24" ry="70" fill="url(#leafGrad)" transform="rotate(-8 135 380)"/>
-  </g>
-
-  <!-- Background plant (right top) -->
-  <g opacity="0.7" filter="url(#blur)">
-    <ellipse cx="715" cy="280" rx="24" ry="70" fill="url(#leafGrad)" transform="rotate(20 715 280)"/>
-    <ellipse cx="745" cy="220" rx="20" ry="55" fill="url(#leafGrad)" transform="rotate(30 745 220)"/>
-    <ellipse cx="680" cy="245" rx="18" ry="50" fill="url(#leafGrad)" transform="rotate(-5 680 245)"/>
-  </g>
-  <!-- Vase -->
-  <path d="M 690 330 Q 685 360 695 400 L 740 400 Q 750 360 745 330 Z" fill="#EFDDC1" opacity="0.85"/>
-
-  <!-- Table surface -->
-  <path d="M 0 820 L 800 820 L 800 1000 L 0 1000 Z" fill="url(#tableGrad)"/>
-  <ellipse cx="400" cy="820" rx="800" ry="14" fill="#F0D9B3" opacity="0.7"/>
-  <!-- Soft table reflection under mug -->
-  <ellipse cx="640" cy="975" rx="120" ry="10" fill="#8E6D45" opacity="0.18"/>
-
-  <!-- ===== Figure ===== -->
-  <!-- Body / sweater silhouette -->
-  <path d="M 200 1000
-           L 220 760
-           Q 240 620 360 595
-           Q 470 575 545 625
-           Q 605 705 615 830
-           L 640 1000 Z"
-        fill="url(#sweaterGrad)"/>
-
-  <!-- Knit texture (subtle wavy lines) -->
-  <g stroke="#D7BC95" stroke-width="1.4" fill="none" opacity="0.32">
-    <path d="M 245 680 Q 380 660 555 685"/>
-    <path d="M 235 730 Q 380 710 575 735"/>
-    <path d="M 230 780 Q 380 760 590 785"/>
-    <path d="M 225 830 Q 380 810 600 835"/>
-    <path d="M 220 880 Q 380 860 610 885"/>
-    <path d="M 215 930 Q 380 910 620 935"/>
-  </g>
-  <!-- Neckline shadow -->
-  <path d="M 380 600 Q 440 580 480 605 Q 470 615 440 615 Q 410 615 380 600 Z" fill="#D7BC95" opacity="0.45"/>
-
-  <!-- Neck -->
-  <path d="M 410 540 Q 408 588 432 600 Q 462 600 470 575 L 470 540 Z" fill="url(#skinGrad)"/>
-  <!-- Neck shadow -->
-  <path d="M 412 555 Q 415 585 438 595 Q 462 595 467 580" stroke="#D5A57E" stroke-width="2" fill="none" opacity="0.35"/>
-
-  <!-- Hair back layer (covers head and falls behind) -->
-  <path d="M 365 290
-           Q 350 200 425 175
-           Q 510 165 555 220
-           Q 580 280 558 360
-           Q 555 415 540 460
-           L 528 500
-           Q 520 510 510 500
-           Q 512 460 514 420
-           Q 470 422 440 422
-           Q 388 420 372 408
-           Q 360 360 365 290 Z"
-        fill="url(#hairGrad)"/>
-
-  <!-- Bun on top -->
-  <ellipse cx="478" cy="195" rx="55" ry="44" fill="url(#hairGrad)"/>
-  <ellipse cx="500" cy="184" rx="22" ry="14" fill="#4A3322" opacity="0.55"/>
-  <ellipse cx="455" cy="200" rx="14" ry="9" fill="#6A4A30" opacity="0.45"/>
-
-  <!-- Loose strands -->
-  <path d="M 425 195 Q 415 205 422 218" stroke="#3D2A1E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  <path d="M 530 215 Q 545 215 552 230" stroke="#3D2A1E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  <path d="M 502 158 Q 510 150 522 156" stroke="#3D2A1E" stroke-width="2" fill="none" stroke-linecap="round"/>
-
-  <!-- Face -->
-  <ellipse cx="458" cy="385" rx="82" ry="102" fill="url(#skinGrad)"/>
-
-  <!-- Hair front (bangs / side fringe) -->
-  <path d="M 378 320
-           Q 380 270 415 258
-           Q 470 252 525 278
-           Q 545 310 540 360
-           Q 530 320 478 312
-           Q 432 314 405 324
-           Q 388 336 378 360
-           Z"
-        fill="url(#hairGrad)"/>
-  <!-- Wisp on cheek -->
-  <path d="M 395 360 Q 400 395 410 425" stroke="#3D2A1E" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.85"/>
-
-  <!-- Soft cheek blush -->
-  <ellipse cx="430" cy="420" rx="22" ry="14" fill="#E9A98A" opacity="0.32"/>
-  <ellipse cx="500" cy="415" rx="18" ry="11" fill="#E9A98A" opacity="0.22"/>
-
-  <!-- Eyebrow -->
-  <path d="M 458 352 Q 478 346 498 354" stroke="#2F1F14" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-
-  <!-- Eye (looking softly up/away) -->
-  <path d="M 460 376 Q 478 369 496 376" stroke="#2F1F14" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-  <circle cx="479" cy="374" r="2.2" fill="#2F1F14"/>
-  <!-- Eyelash hint -->
-  <path d="M 462 378 L 460 382 M 470 376 L 469 381 M 478 376 L 478 381 M 486 376 L 487 381 M 494 378 L 496 382"
-        stroke="#2F1F14" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
-
-  <!-- Nose suggestion -->
-  <path d="M 460 405 Q 454 420 463 432 Q 472 436 478 430"
-        stroke="#C99873" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.7"/>
-
-  <!-- Lips (gentle smile) -->
-  <path d="M 446 458 Q 460 466 478 458" fill="#D89279" opacity="0.85"/>
-  <path d="M 446 458 Q 460 462 478 458" stroke="#B86F58" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-  <path d="M 446 458 Q 460 470 478 458" stroke="#B86F58" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-
-  <!-- Jaw shadow -->
-  <path d="M 406 450 Q 420 480 444 488" stroke="#D5A57E" stroke-width="2" fill="none" opacity="0.3"/>
-
-  <!-- ===== Hand on cheek + arm ===== -->
-  <!-- Forearm in sweater -->
-  <path d="M 295 770
-           Q 250 690 290 600
-           Q 320 560 370 555
-           L 405 580
-           Q 388 605 372 645
-           Q 360 690 365 740
-           L 365 800 Z"
-        fill="url(#sweaterGrad)"/>
-  <!-- Sleeve cuff -->
-  <path d="M 350 540 Q 375 540 405 555 Q 408 568 395 575 Q 365 562 348 562 Z"
-        fill="#D7BC95" opacity="0.5"/>
-  <!-- Knit lines on sleeve -->
-  <g stroke="#D7BC95" stroke-width="1.2" fill="none" opacity="0.3">
-    <path d="M 295 660 Q 340 645 395 640"/>
-    <path d="M 290 710 Q 335 695 385 692"/>
-    <path d="M 295 760 Q 340 745 380 745"/>
-  </g>
-
-  <!-- Hand at cheek -->
-  <g transform="rotate(-22 388 490)">
-    <ellipse cx="388" cy="490" rx="36" ry="52" fill="url(#skinGrad)"/>
-    <!-- Knuckles -->
-    <path d="M 372 460 Q 380 452 392 454 M 372 478 Q 380 472 394 474 M 374 496 Q 384 490 396 492"
-          stroke="#D49873" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.55"/>
-    <!-- Thumb -->
-    <path d="M 412 480 Q 425 488 418 510" stroke="#D49873" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.55"/>
-    <!-- Wrist shadow -->
-    <ellipse cx="388" cy="540" rx="32" ry="8" fill="#D49873" opacity="0.25"/>
-  </g>
-
-  <!-- ===== Coffee Mug ===== -->
-  <g>
-    <!-- Body -->
-    <path d="M 575 832 L 580 940 Q 582 962 605 968 L 678 968 Q 700 962 702 940 L 707 832 Z" fill="url(#mugGrad)"/>
-    <!-- Top opening -->
-    <ellipse cx="641" cy="832" rx="66" ry="14" fill="#3A2418"/>
-    <ellipse cx="641" cy="830" rx="62" ry="11" fill="#5C3F2A"/>
-    <!-- Coffee surface highlight -->
-    <ellipse cx="630" cy="828" rx="22" ry="3" fill="#A87F58" opacity="0.6"/>
-    <!-- Rim -->
-    <ellipse cx="641" cy="832" rx="66" ry="14" fill="none" stroke="#E5D3B7" stroke-width="2"/>
-    <!-- Handle -->
-    <path d="M 707 858 Q 752 862 752 905 Q 752 945 707 944"
-          stroke="url(#mugGrad)" stroke-width="16" fill="none" stroke-linecap="round"/>
-    <path d="M 707 875 Q 740 880 740 905 Q 740 932 708 930"
-          stroke="#EFE3D0" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
-    <!-- Body shading -->
-    <path d="M 580 870 Q 590 920 600 960" stroke="#E5D3B7" stroke-width="3" fill="none" opacity="0.45"/>
-    <path d="M 700 870 Q 695 920 685 960" stroke="#C8B393" stroke-width="3" fill="none" opacity="0.4"/>
-
-    <!-- Steam -->
-    <g stroke="#FFFFFF" stroke-width="3.5" fill="none" opacity="0.5" stroke-linecap="round">
-      <path d="M 612 808 Q 605 788 615 766 Q 625 746 615 724"/>
-      <path d="M 645 808 Q 640 788 650 768"/>
-      <path d="M 670 800 Q 668 786 676 774"/>
+  <!-- ===== Eucalyptus branch top-left ===== -->
+  <g transform="translate(-30,-10) rotate(-20 100 100)">
+    <path d="M 80 60 Q 200 180 300 280" stroke="#7E8C5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g fill="url(#leafSoft)">
+      <ellipse cx="120" cy="100" rx="22" ry="11" transform="rotate(-30 120 100)"/>
+      <ellipse cx="155" cy="135" rx="22" ry="11" transform="rotate(-15 155 135)"/>
+      <ellipse cx="190" cy="170" rx="24" ry="12" transform="rotate(0 190 170)"/>
+      <ellipse cx="225" cy="205" rx="22" ry="11" transform="rotate(15 225 205)"/>
+      <ellipse cx="260" cy="240" rx="20" ry="10" transform="rotate(30 260 240)"/>
+      <ellipse cx="100" cy="135" rx="20" ry="10" transform="rotate(40 100 135)"/>
+      <ellipse cx="135" cy="170" rx="20" ry="10" transform="rotate(50 135 170)"/>
+      <ellipse cx="170" cy="205" rx="20" ry="10" transform="rotate(65 170 205)"/>
     </g>
   </g>
 
-  <!-- Subtle vignette to deepen edges -->
-  <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.85">
-    <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+  <!-- ===== Eucalyptus branch top-right ===== -->
+  <g transform="translate(820,-20) rotate(20)">
+    <path d="M -50 80 Q -160 200 -260 320" stroke="#7E8C5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g fill="url(#leafSoft)">
+      <ellipse cx="-90" cy="120" rx="22" ry="11" transform="rotate(30 -90 120)"/>
+      <ellipse cx="-130" cy="155" rx="22" ry="11" transform="rotate(15 -130 155)"/>
+      <ellipse cx="-170" cy="195" rx="24" ry="12" transform="rotate(0 -170 195)"/>
+      <ellipse cx="-210" cy="235" rx="22" ry="11" transform="rotate(-15 -210 235)"/>
+      <ellipse cx="-65" cy="155" rx="20" ry="10" transform="rotate(-40 -65 155)"/>
+      <ellipse cx="-105" cy="190" rx="20" ry="10" transform="rotate(-55 -105 190)"/>
+      <ellipse cx="-145" cy="225" rx="20" ry="10" transform="rotate(-65 -145 225)"/>
+    </g>
+  </g>
+
+  <!-- ===== Table surface ===== -->
+  <path d="M 0 720 L 800 720 L 800 1000 L 0 1000 Z" fill="url(#table)"/>
+  <ellipse cx="400" cy="720" rx="800" ry="14" fill="#EFD7AE" opacity="0.7"/>
+  <!-- Wood grain hints -->
+  <g stroke="#A88660" stroke-width="1" opacity="0.18" fill="none">
+    <path d="M 0 770 Q 400 765 800 775"/>
+    <path d="M 0 830 Q 400 826 800 836"/>
+    <path d="M 0 890 Q 400 885 800 895"/>
+    <path d="M 0 950 Q 400 945 800 955"/>
+  </g>
+
+  <!-- ===== Open book under mug ===== -->
+  <g>
+    <path d="M 200 870 Q 400 855 600 870 L 605 940 Q 400 925 195 940 Z" fill="url(#book)"/>
+    <path d="M 400 858 L 400 932" stroke="#8E6D45" stroke-width="2" opacity="0.5"/>
+    <g stroke="#FAF1DD" stroke-width="1.4" opacity="0.7">
+      <path d="M 240 890 L 380 880"/>
+      <path d="M 240 905 L 370 895"/>
+      <path d="M 240 920 L 380 910"/>
+      <path d="M 420 880 L 560 890"/>
+      <path d="M 420 895 L 570 905"/>
+      <path d="M 420 910 L 560 920"/>
+    </g>
+  </g>
+
+  <!-- ===== Coffee mug (centered on book) ===== -->
+  <g>
+    <!-- Mug shadow on book -->
+    <ellipse cx="400" cy="870" rx="115" ry="12" fill="#7A5A38" opacity="0.18"/>
+
+    <!-- Saucer -->
+    <ellipse cx="400" cy="865" rx="135" ry="22" fill="url(#mug)"/>
+    <ellipse cx="400" cy="861" rx="125" ry="16" fill="#E9DCC4"/>
+
+    <!-- Mug body -->
+    <path d="M 320 720 L 322 850 Q 322 870 350 875 L 450 875 Q 478 870 478 850 L 480 720 Z" fill="url(#mug)"/>
+    <!-- Mug top (coffee) -->
+    <ellipse cx="400" cy="722" rx="80" ry="16" fill="#3A2418"/>
+    <ellipse cx="400" cy="720" rx="76" ry="13" fill="#5C3F2A"/>
+    <!-- Cream highlight on coffee -->
+    <ellipse cx="385" cy="717" rx="22" ry="3" fill="#A87F58" opacity="0.65"/>
+    <ellipse cx="380" cy="716" rx="10" ry="2" fill="#C9A57B" opacity="0.7"/>
+    <!-- Rim -->
+    <ellipse cx="400" cy="720" rx="80" ry="16" fill="none" stroke="#E5D3B7" stroke-width="2"/>
+    <!-- Mug shading -->
+    <path d="M 326 740 Q 332 800 340 855" stroke="#E5D3B7" stroke-width="3" fill="none" opacity="0.5"/>
+    <path d="M 474 740 Q 470 800 462 855" stroke="#C8B393" stroke-width="3" fill="none" opacity="0.45"/>
+    <!-- Handle -->
+    <path d="M 478 750 Q 530 752 530 800 Q 530 845 478 843"
+          stroke="url(#mug)" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <path d="M 478 770 Q 514 772 514 802 Q 514 832 478 832"
+          stroke="#EFE3D0" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- ===== Steam ===== -->
+  <g stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round">
+    <path d="M 365 690 Q 358 660 372 630 Q 386 600 372 568 Q 358 540 372 510"/>
+    <path d="M 400 695 Q 394 666 408 640 Q 420 612 410 586"/>
+    <path d="M 435 690 Q 430 664 442 638 Q 452 614 444 590 Q 436 568 444 548"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.35" stroke-linecap="round">
+    <path d="M 350 700 Q 340 670 350 640"/>
+    <path d="M 460 695 Q 470 666 460 636"/>
+  </g>
+
+  <!-- ===== Small leaf on table ===== -->
+  <g transform="translate(610,790) rotate(-20)">
+    <path d="M 0 0 Q 30 -8 60 0 Q 30 10 0 0 Z" fill="url(#leaf)"/>
+    <path d="M 0 0 L 60 0" stroke="#5E6E45" stroke-width="0.8" opacity="0.7"/>
+  </g>
+  <g transform="translate(180,800) rotate(15)">
+    <path d="M 0 0 Q 25 -7 50 0 Q 25 8 0 0 Z" fill="url(#leafSoft)"/>
+  </g>
+
+  <!-- ===== Soft floating petal ===== -->
+  <g opacity="0.7">
+    <circle cx="250" cy="540" r="6" fill="url(#petal)"/>
+    <circle cx="310" cy="600" r="4" fill="url(#petal)"/>
+    <circle cx="540" cy="500" r="5" fill="url(#petal)"/>
+  </g>
+
+  <!-- Vignette -->
+  <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.95">
+    <stop offset="65%" stop-color="#000" stop-opacity="0"/>
     <stop offset="100%" stop-color="#3F2B1E" stop-opacity="0.18"/>
   </radialGradient>
   <rect width="800" height="1000" fill="url(#vignette)"/>
