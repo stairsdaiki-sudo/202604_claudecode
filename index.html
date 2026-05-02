@@ -3,42 +3,534 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>シンプルアラーム</title>
+  <meta name="description" content="ひとりで抱え込まなくて大丈夫。経験豊富な相談員が、あなたの気持ちにそっと寄り添う悩み相談サービスです。初回30分無料・プライバシー厳守。" />
+  <title>こころより | 話すことで、心が軽くなる｜悩み相談サービス</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>シンプルアラーム</h1>
 
-    <section class="clock-section">
-      <div id="current-time" class="current-time">--:--:--</div>
-      <div id="current-date" class="current-date">----/--/--</div>
-    </section>
-
-    <section class="form-section">
-      <label for="alarm-time">アラーム時刻</label>
-      <div class="form-row">
-        <input type="time" id="alarm-time" step="1" />
-        <input type="text" id="alarm-label" placeholder="ラベル（任意）" maxlength="40" />
-        <button id="add-alarm" type="button">追加</button>
-      </div>
-    </section>
-
-    <section class="list-section">
-      <h2>アラーム一覧</h2>
-      <ul id="alarm-list" class="alarm-list"></ul>
-      <p id="empty-message" class="empty-message">アラームはまだありません。</p>
-    </section>
-
-    <div id="ringing-overlay" class="ringing-overlay hidden">
-      <div class="ringing-card">
-        <h2>⏰ アラーム</h2>
-        <p id="ringing-label">時間です</p>
-        <button id="stop-ringing" type="button">停止</button>
-      </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 21s-7-4.5-7-11a4 4 0 017-2.6A4 4 0 0119 10c0 6.5-7 11-7 11z" fill="currentColor"/></svg>
+        </span>
+        <span class="logo-text">こころより</span>
+      </a>
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="#features">特徴</a>
+        <a href="#worries">お悩み</a>
+        <a href="#counselors">相談員</a>
+        <a href="#flow">ご利用の流れ</a>
+        <a href="#voice">お客様の声</a>
+        <a href="#faq">よくある質問</a>
+      </nav>
+      <a href="#contact" class="header-cta">無料で相談</a>
     </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-grid container">
+          <div class="hero-text">
+            <p class="hero-lead">
+              ひとりで抱え込まなくて大丈夫。<br />
+              あなたの気持ちに、<span class="lead-accent">そっと寄り添います。</span>
+            </p>
+            <h1 class="hero-title">
+              話すことで、<br />
+              <span class="title-accent">心</span> が軽くなる。
+            </h1>
+            <p class="hero-desc">
+              私たちは、あなたの「つらい」「困った」に寄り添う<br />
+              悩み相談のパートナーです。
+            </p>
+
+            <div class="hero-cta">
+              <span class="cta-label">ご相談は<br />こちらから</span>
+              <a href="#contact" class="cta-button">
+                <span class="cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14"><path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                無料で相談してみる
+                <span class="cta-arrow" aria-hidden="true">›</span>
+              </a>
+            </div>
+
+            <p class="hero-note">
+              <span class="lock-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="11" height="11"><path d="M5 11h14v10H5zM8 11V7a4 4 0 018 0v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              プライバシーは厳守しますのでご安心ください
+            </p>
+          </div>
+
+          <div class="hero-photo">
+            <img src="images/hero.jpg"
+                 alt="柔らかな日差しの入る部屋で、コーヒーカップを手にゆったりとくつろぐ女性"
+                 onerror="this.onerror=null;this.src='hero-illustration.svg';" />
+          </div>
+        </div>
+
+        <div class="hero-features container" id="features">
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 21s-7-4.5-7-11a4 4 0 017-2.6A4 4 0 0119 10c0 6.5-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>どんなお悩みでもOK</h3>
+            <p>人間関係・仕事・家族・将来のことなど、<br />どんな内容でもご相談いただけます。</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M14 19c0-2 2-4 5-4s4 2 4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>経験豊富な相談員が対応</h3>
+            <p>専門知識を持つ相談員が、<br />あなたの気持ちに寄り添います。</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 11h14v10H5zM8 11V7a4 4 0 018 0v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>プライバシー厳守</h3>
+            <p>お名前やご相談内容が外部に<br />伝わることはありません。</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>いつでも相談できる</h3>
+            <p>オンライン・電話での相談に対応。<br />あなたのペースでご利用いただけます。</p>
+          </div>
+        </div>
+
+        <svg class="hero-card-curve" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+
+      <p class="hero-tagline">
+        <span class="leaf left" aria-hidden="true">
+          <svg viewBox="0 0 40 16"><path d="M2 8 Q12 -2 20 4 M2 8 Q12 18 20 12 M20 8 Q28 4 38 8" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="38" cy="8" r="1.5" fill="currentColor"/></svg>
+        </span>
+        あなたの気持ちを、<span class="tagline-accent">安心して話せる場所</span>があります。
+        <span class="leaf right" aria-hidden="true">
+          <svg viewBox="0 0 40 16"><path d="M38 8 Q28 -2 20 4 M38 8 Q28 18 20 12 M20 8 Q12 4 2 8" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="8" r="1.5" fill="currentColor"/></svg>
+        </span>
+      </p>
+    </section>
+
+    <!-- ===================== WORRIES ===================== -->
+    <section class="section worries" id="worries">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">Worries</p>
+          <h2 class="section-title">こんなお悩み、<br class="sp-only" />ありませんか？</h2>
+          <p class="section-desc">小さなモヤモヤから、人には言えない深い悩みまで。<br />どんなお話でも、私たちは丁寧にお聴きします。</p>
+        </div>
+
+        <ul class="worries-list">
+          <li>
+            <span class="worries-num">01</span>
+            <h3>人間関係に疲れた</h3>
+            <p>職場や家族、友人とのつき合いに、もう気力が残っていない…。</p>
+          </li>
+          <li>
+            <span class="worries-num">02</span>
+            <h3>将来が不安で眠れない</h3>
+            <p>これからのキャリア、お金、健康。漠然とした不安が消えない。</p>
+          </li>
+          <li>
+            <span class="worries-num">03</span>
+            <h3>気持ちを話せる人がいない</h3>
+            <p>本音を打ち明けられる相手がいなくて、ひとりで抱え込んでしまう。</p>
+          </li>
+          <li>
+            <span class="worries-num">04</span>
+            <h3>恋愛・夫婦関係の悩み</h3>
+            <p>パートナーとのすれ違い、別れ、再出発について話したい。</p>
+          </li>
+          <li>
+            <span class="worries-num">05</span>
+            <h3>子育て・介護のストレス</h3>
+            <p>頑張っているのに認められない。誰かに聴いてほしい。</p>
+          </li>
+          <li>
+            <span class="worries-num">06</span>
+            <h3>なんとなく、しんどい</h3>
+            <p>理由はわからないけれど、心が重い。話すことで整理したい。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROMISE ===================== -->
+    <section class="section promise">
+      <div class="container promise-inner">
+        <div class="promise-text">
+          <p class="section-eyebrow">Our Promise</p>
+          <h2 class="section-title">アドバイスより、<br />まず「聴くこと」を大切に。</h2>
+          <p>
+            私たちは、無理に答えを出そうとはしません。<br />
+            まずはあなたの気持ちを、否定せず、評価せず、<br />
+            ありのままに受け止めることから始めます。
+          </p>
+          <p>
+            話しているうちに、自分でも気づかなかった想いが見えてくる。<br />
+            そんな <em>共感と傾聴の時間</em> をお届けします。
+          </p>
+          <ul class="promise-points">
+            <li>否定しない・評価しない・指示しない</li>
+            <li>あなたのペースを最優先</li>
+            <li>守秘義務を徹底（個人情報ガイドライン準拠）</li>
+            <li>必要に応じて専門機関への橋渡しも実施</li>
+          </ul>
+        </div>
+        <div class="promise-card">
+          <div class="promise-quote-mark">“</div>
+          <p>つらい時に「つらい」と言えること。<br />それは、強さの一歩です。</p>
+          <span class="promise-author">— こころより 相談員一同</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COUNSELORS ===================== -->
+    <section class="section counselors" id="counselors">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">Counselors</p>
+          <h2 class="section-title">経験豊富な相談員が、<br class="sp-only" />お話を伺います</h2>
+          <p class="section-desc">心理学・キャリア・福祉などの専門知識を持つ、<br />厳しい研修を経た相談員のみが対応します。</p>
+        </div>
+
+        <div class="counselor-grid">
+          <article class="counselor-card">
+            <div class="counselor-avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100" width="100" height="100">
+                <circle cx="50" cy="50" r="50" fill="#F4E9D5"/>
+                <circle cx="50" cy="40" r="16" fill="#C9A57B"/>
+                <path d="M20 90 Q20 65 50 65 Q80 65 80 90 Z" fill="#D7B286"/>
+              </svg>
+            </div>
+            <h3>はる さん</h3>
+            <p class="counselor-tag">公認心理師 / 経験 12 年</p>
+            <p class="counselor-bio">人間関係・職場のストレス・燃え尽き感のご相談を多く担当。穏やかなテンポで寄り添います。</p>
+            <ul class="counselor-tags">
+              <li>人間関係</li><li>仕事</li><li>燃え尽き</li>
+            </ul>
+          </article>
+
+          <article class="counselor-card">
+            <div class="counselor-avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100" width="100" height="100">
+                <circle cx="50" cy="50" r="50" fill="#EDE0C5"/>
+                <circle cx="50" cy="40" r="16" fill="#B89370"/>
+                <path d="M20 90 Q20 65 50 65 Q80 65 80 90 Z" fill="#C29768"/>
+              </svg>
+            </div>
+            <h3>まこと さん</h3>
+            <p class="counselor-tag">産業カウンセラー / 経験 9 年</p>
+            <p class="counselor-bio">男性のお悩み、仕事・キャリア相談が得意。話しやすさを大切にした傾聴スタイルです。</p>
+            <ul class="counselor-tags">
+              <li>キャリア</li><li>男性</li><li>転職</li>
+            </ul>
+          </article>
+
+          <article class="counselor-card">
+            <div class="counselor-avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100" width="100" height="100">
+                <circle cx="50" cy="50" r="50" fill="#F4E4C9"/>
+                <circle cx="50" cy="40" r="16" fill="#A87E55"/>
+                <path d="M20 90 Q20 65 50 65 Q80 65 80 90 Z" fill="#B89370"/>
+              </svg>
+            </div>
+            <h3>あおい さん</h3>
+            <p class="counselor-tag">臨床心理士 / 経験 15 年</p>
+            <p class="counselor-bio">家族関係・子育て・夫婦のご相談を多数経験。じっくり丁寧にお話を伺います。</p>
+            <ul class="counselor-tags">
+              <li>家族</li><li>子育て</li><li>夫婦</li>
+            </ul>
+          </article>
+
+          <article class="counselor-card">
+            <div class="counselor-avatar" aria-hidden="true">
+              <svg viewBox="0 0 100 100" width="100" height="100">
+                <circle cx="50" cy="50" r="50" fill="#EFE0CB"/>
+                <circle cx="50" cy="40" r="16" fill="#C9A57B"/>
+                <path d="M20 90 Q20 65 50 65 Q80 65 80 90 Z" fill="#D7B286"/>
+              </svg>
+            </div>
+            <h3>みお さん</h3>
+            <p class="counselor-tag">社会福祉士 / 経験 8 年</p>
+            <p class="counselor-bio">介護・福祉・将来不安など、生活に関わるご相談が得意。優しく落ち着いた語り口です。</p>
+            <ul class="counselor-tags">
+              <li>介護</li><li>福祉</li><li>将来不安</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FLOW ===================== -->
+    <section class="section flow" id="flow">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">Flow</p>
+          <h2 class="section-title">ご利用の流れ</h2>
+          <p class="section-desc">はじめての方でも、安心してご利用いただけます。</p>
+        </div>
+        <ol class="flow-list">
+          <li>
+            <div class="flow-step">STEP 01</div>
+            <h3>お申し込み</h3>
+            <p>フォームから、お名前（ニックネーム可）とご希望の相談方法をお選びください。</p>
+          </li>
+          <li>
+            <div class="flow-step">STEP 02</div>
+            <h3>日時のご案内</h3>
+            <p>ご希望の日時に合わせて、相談員からご連絡いたします。</p>
+          </li>
+          <li>
+            <div class="flow-step">STEP 03</div>
+            <h3>相談スタート</h3>
+            <p>オンライン・お電話で、あなたのペースでお話しください。</p>
+          </li>
+          <li>
+            <div class="flow-step">STEP 04</div>
+            <h3>振り返り</h3>
+            <p>セッション後、心の整理に役立つメモをお送りします（ご希望の方のみ）。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section class="section pricing">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">Plans</p>
+          <h2 class="section-title">料金プラン</h2>
+          <p class="section-desc">あなたに合ったかたちで、ご利用ください。</p>
+        </div>
+        <div class="plan-grid">
+          <article class="plan">
+            <h3>初回お試し</h3>
+            <p class="plan-price"><span class="price-num">0</span><span class="price-unit">円</span></p>
+            <p class="plan-desc">30分</p>
+            <ul>
+              <li>初回限定・無料</li>
+              <li>オンライン / 電話</li>
+              <li>相談員とのお試し対話</li>
+            </ul>
+            <a href="#contact" class="plan-cta">無料で試す</a>
+          </article>
+
+          <article class="plan plan-featured">
+            <p class="plan-badge">人気No.1</p>
+            <h3>スタンダード</h3>
+            <p class="plan-price"><span class="price-num">3,300</span><span class="price-unit">円 / 50分</span></p>
+            <p class="plan-desc">じっくり話したい方に</p>
+            <ul>
+              <li>50分のセッション</li>
+              <li>セッション後メモ付き</li>
+              <li>同じ相談員を指名可能</li>
+            </ul>
+            <a href="#contact" class="plan-cta">このプランで申し込む</a>
+          </article>
+
+          <article class="plan">
+            <h3>定期サポート</h3>
+            <p class="plan-price"><span class="price-num">9,900</span><span class="price-unit">円 / 月</span></p>
+            <p class="plan-desc">月4回・各50分</p>
+            <ul>
+              <li>継続的にお話したい方に</li>
+              <li>同じ相談員が担当</li>
+              <li>いつでも休止OK</li>
+            </ul>
+            <a href="#contact" class="plan-cta">このプランで申し込む</a>
+          </article>
+        </div>
+        <p class="pricing-note">※ 表示はすべて税込価格です。当サービスは医療行為ではありません。</p>
+      </div>
+    </section>
+
+    <!-- ===================== VOICE ===================== -->
+    <section class="section voice" id="voice">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">Voice</p>
+          <h2 class="section-title">お客様の声</h2>
+          <p class="section-desc">実際にご利用いただいた方からの感想です。</p>
+        </div>
+        <div class="voice-grid">
+          <figure class="voice-card">
+            <div class="voice-stars" aria-label="評価5">★★★★★</div>
+            <blockquote>
+              話を遮らず、最後まで聴いてくれた。それだけで涙が出ました。誰かに受け止めてもらえる安心感を、はじめて知りました。
+            </blockquote>
+            <figcaption>
+              <span class="voice-avatar" aria-hidden="true">
+                <svg viewBox="0 0 60 60" width="40" height="40"><circle cx="30" cy="30" r="30" fill="#F4E9D5"/><circle cx="30" cy="24" r="9" fill="#C9A57B"/><path d="M12 54 Q12 39 30 39 Q48 39 48 54 Z" fill="#D7B286"/></svg>
+              </span>
+              <span>30代・女性 / 人間関係のご相談</span>
+            </figcaption>
+          </figure>
+          <figure class="voice-card">
+            <div class="voice-stars" aria-label="評価5">★★★★★</div>
+            <blockquote>
+              答えを押し付けられないのがよかったです。自分の言葉で気持ちを整理できて、少しずつ前に進めるようになりました。
+            </blockquote>
+            <figcaption>
+              <span class="voice-avatar" aria-hidden="true">
+                <svg viewBox="0 0 60 60" width="40" height="40"><circle cx="30" cy="30" r="30" fill="#EDE0C5"/><circle cx="30" cy="24" r="9" fill="#B89370"/><path d="M12 54 Q12 39 30 39 Q48 39 48 54 Z" fill="#C29768"/></svg>
+              </span>
+              <span>40代・男性 / 仕事のご相談</span>
+            </figcaption>
+          </figure>
+          <figure class="voice-card">
+            <div class="voice-stars" aria-label="評価5">★★★★★</div>
+            <blockquote>
+              家族にも友人にも言えなかったことを、安心して話せました。今も継続して利用しています。
+            </blockquote>
+            <figcaption>
+              <span class="voice-avatar" aria-hidden="true">
+                <svg viewBox="0 0 60 60" width="40" height="40"><circle cx="30" cy="30" r="30" fill="#F4E4C9"/><circle cx="30" cy="24" r="9" fill="#A87E55"/><path d="M12 54 Q12 39 30 39 Q48 39 48 54 Z" fill="#B89370"/></svg>
+              </span>
+              <span>20代・女性 / 将来への不安</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 class="section-title">よくあるご質問</h2>
+        </div>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>相談内容はどんなことでも大丈夫ですか？</dt>
+            <dd>はい。人間関係、仕事、家族、恋愛、将来の不安など、内容を問わずご相談いただけます。「うまく話せないかも」という方も大丈夫です。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>本名を伝える必要はありますか？</dt>
+            <dd>ニックネームでのご利用が可能です。お名前や個人情報を相談員に伝える必要はありません。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>カウンセリングや医療行為とは違うのですか？</dt>
+            <dd>当サービスは「共感と傾聴」を目的としたサポートサービスであり、医療・診断行為は行いません。必要に応じて専門機関のご案内も可能です。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>どんな方法で相談できますか？</dt>
+            <dd>オンライン（ビデオ通話）、お電話のいずれかでご利用いただけます。お顔を出さずにお話しすることも可能です。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>キャンセルはできますか？</dt>
+            <dd>セッション開始の24時間前までは無料でキャンセル可能です。それ以降は所定のキャンセル料を頂戴いたします。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <p class="section-eyebrow light">Contact</p>
+        <h2 class="contact-title">まずは、お話を聴かせてください。</h2>
+        <p class="contact-desc">
+          初回30分は<strong>無料</strong>です。<br />
+          「話してみる」その一歩を、私たちが大切にお迎えします。
+        </p>
+
+        <form class="contact-form" onsubmit="event.preventDefault();">
+          <div class="form-row">
+            <label>
+              <span>お名前（ニックネーム可）<em>必須</em></span>
+              <input type="text" name="name" placeholder="例：はる" required />
+            </label>
+            <label>
+              <span>メールアドレス<em>必須</em></span>
+              <input type="email" name="email" placeholder="example@mail.com" required />
+            </label>
+          </div>
+          <label>
+            <span>ご希望の相談方法</span>
+            <select name="method">
+              <option>オンライン（ビデオ通話）</option>
+              <option>オンライン（音声のみ）</option>
+              <option>お電話</option>
+              <option>まだ決めていない</option>
+            </select>
+          </label>
+          <label>
+            <span>ご相談内容（任意）</span>
+            <textarea name="message" rows="4" placeholder="差し支えない範囲で、お話したいことを教えてください。"></textarea>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" required />
+            <span><a href="#">プライバシーポリシー</a>に同意します</span>
+          </label>
+          <button type="submit" class="contact-submit">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            無料で相談してみる
+            <span class="cta-arrow" aria-hidden="true">›</span>
+          </button>
+          <p class="contact-note">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="12" height="12"><path d="M5 11h14v10H5zM8 11V7a4 4 0 018 0v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            ご入力いただいた情報は SSL 通信で暗号化され、厳重に管理いたします。
+          </p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <script src="app.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 21s-7-4.5-7-11a4 4 0 017-2.6A4 4 0 0119 10c0 6.5-7 11-7 11z" fill="currentColor"/></svg>
+          </span>
+          <span class="logo-text">こころより</span>
+        </a>
+        <p>あなたの気持ちに、そっと寄り添う<br />悩み相談サービス</p>
+      </div>
+      <nav class="footer-nav" aria-label="フッターメニュー">
+        <a href="#features">サービスの特徴</a>
+        <a href="#worries">対応するお悩み</a>
+        <a href="#counselors">相談員</a>
+        <a href="#flow">ご利用の流れ</a>
+        <a href="#voice">お客様の声</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <div class="footer-meta">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">利用規約</a>
+        <small>© 2026 Kokoroyori. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#contact" class="floating-cta">
+    <span aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="14" height="14"><path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+    無料で相談する
+  </a>
+
 </body>
 </html>
